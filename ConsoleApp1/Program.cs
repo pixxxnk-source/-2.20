@@ -55,10 +55,10 @@ class Program
         double[] hours = { 8.5, 8, 8 };
 
         int i = 0;
-        foreach (Employee employee in employees)
+        foreach (var item in employees)
         {
-            int wage = employee.CalculateDailyWage(hours[i]);
-            Console.WriteLine($"社員ID: {employee.Id}, 名前: {employee.Name}, 給料: {wage}");
+            int wage = item.CalculateDailyWage(hours[i]);
+            Console.WriteLine($"社員ID: {item.Id}, 名前: {item.Name}, 給料: {wage}");
             i++;
         }
 
