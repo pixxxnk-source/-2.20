@@ -30,7 +30,6 @@ class FullTimeEmployee : Employee
         return (int)wage; 
     }
 }
-
 class ContractEmployee : Employee
 {
     private const double HourlyRate = 1000;
@@ -55,10 +54,13 @@ class Program
         };
         double[] hours = { 8.5, 8, 8 };
 
-        for (int i = 0; i < employees.Count; i++)
+        int i = 0;
+        foreach (Employee employee in employees)
         {
-            int wage = employees[i].CalculateDailyWage(hours[i]);
-            Console.WriteLine($"社員ID: {employees[i].Id}, 名前: {employees[i].Name}, 給料: {wage}");
+            int wage = employee.CalculateDailyWage(hours[i]);
+            Console.WriteLine($"社員ID: {employee.Id}, 名前: {employee.Name}, 給料: {wage}");
+            i++;
         }
+
     }
 }
